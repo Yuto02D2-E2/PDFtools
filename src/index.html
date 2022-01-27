@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <title>PDF tools</title>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-0W9FZ3QRLK"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-0W9FZ3QRLK');
+        </script> -->
+    </head>
+
+    <body>
+        <header>
+            <a href="#" id="logo">
+                <img src="./images/logo.png" alt="logo">
+            </a>
+            <span id="title">PDF tools</span>
+            <span id="now"></span>
+        </header>
+
+        <main>
+            <div class="pdfInput">
+                <p class="_block">
+                    結合したいPDFファイル(*.pdf)を選択してください<br>
+                    ※PCの場合，ctrl+クリックで一気に追加出来ます
+                </p>
+                <div class="_block">
+                    <input type="file" name="inputPdf" id="inputPdf" accept=".pdf" multiple="multiple">
+                    <button type="button" id="addBtn">add</button>
+                </div>
+                <div class="_block">
+                    <span>選択したファイル</span>
+                    <button type="button" id="clearBtn">all clear</button>
+                    <div id="selectedFilesView"></div>
+                </div>
+                <div class="_block">
+                    <label for="outputFileName">出力ファイル名</label>
+                    <input type="text" name="outputFileName" id="outputFileName" maxlength="30" required>
+                </div>
+                <div class="_block">
+                    <button type="button" id="mergeBtn">merge</button>
+                </div>
+            </div>
+
+            <div class="pdfOutput">
+                <p class="_block">
+                    生成されたファイルをダウンロードしてください
+                </p>
+                <div id="output">download</div>
+            </div>
+        </main>
+
+        <footer>
+            Yuto02D2 &copy; 2022 All rights reserved.
+        </footer>
+
+        <script src="./script.js"></script>
+    </body>
+
+</html>

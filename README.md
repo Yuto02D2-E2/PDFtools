@@ -8,7 +8,7 @@ As it works on the web, it can be used anywhere.<br>
 Also, it is secure because I made it by myself.<br>
 
 ## Usage
-1. browse to (https://www.github.com/Yuto02D2-E2/PDFtools/)
+1. browse to (https://yuto02d2-e2.github.io/PDFtools)
 2. select origin pdf files
 3. download merged pdf file
 
