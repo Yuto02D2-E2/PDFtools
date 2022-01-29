@@ -1,0 +1,89 @@
+/*
+    BUG:
+    スマホサイズにした時，一画面分しか表示されず，スクロールもできない
+    とりあえず先に進むけど後で直す
+ */
+
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+:root {
+    --background-color: rgba(176, 196, 222, 0.25);
+}
+
+body {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    width: 100vw;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 20px;
+    align-items: center;
+    text-align: center;
+}
+@media screen and (max-width: 512px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+
+header {
+    /* grid layout */
+    display: grid;
+    grid-template-rows: 50px;
+    grid-template-columns: 1fr 4fr 1fr;
+    /* other */
+    align-items: center;
+    width: 96%;
+    padding: 10px 20px;
+    background-color: var(--background-color);
+}
+header a,
+header a img {
+    height: 100%;
+}
+header #title {
+    font-size: 2em;
+}
+
+
+/* TODO: 後でもう少しちゃんと見た目を整える */
+main {
+    flex: 1;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    width: 75%;
+    text-align: left;
+    align-items: center;
+}
+main button {
+    border: solid lightblue 1px;
+    border-radius: 30px;
+    padding: 5px 10px;
+    box-shadow: lightblue 5px 5px 5px;
+}
+main button:hover {
+    box-shadow: none;
+}
+main ._block {
+    margin: 20px 0px;
+}
+
+
+footer {
+    width: 100%;
+    padding: 20px 0;
+    background-color: var(--background-color);
+    font-size: small;
+}
+@media screen and (max-width: 512px) {
+    footer {
+        width: 106%;
+    }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- load css file -->
+        <link rel="stylesheet" href="./style.css">
+        <!-- load javascript library -->
+        <script type="module" src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.js"></script>
+        <script src="https://unpkg.com/@pdf-lib/fontkit@1.1.1/dist/fontkit.umd.js"></script>
+        <script src="./library/download.js"></script>
+
+        <title>PDF tools</title>
+        <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <!-- TODO: google analyticsにこのサイトを登録して，gtagをここに埋め込む -->
+        <!-- TODO: 余裕があれば，site mapというのも設定してみる -->
+    </head>
+
+    <body>
+        <!-- TODO: helpページを作る？ -->
+        <header>
+            <a href="#" id="logo">
+                <img src="./images/logo.png" alt="logo">
+            </a>
+            <span id="title">PDF tools</span>
+            <span id="now"></span>
+        </header>
+
+        <main>
+            <!-- TODO: mainのレイアウトをもう少しちゃんとしたい -->
+            <div id="errWindow" style="color: red;" class="_block"></div>
+
+            <h2>1. 入力ファイルの選択</h2>
+            <p class="_block">
+                結合したいPDFファイル(*.pdf)を選択してください<br>
+                ※PCの場合，ctrl+クリックやshift+クリックで複数選択すれば一気に追加できます
+            </p>
+            <div class="_block">
+                <input type="file" name="inputTAG" id="inputTAG" accept=".pdf" multiple="multiple">
+                <button type="button" id="addBtn">add</button>
+                <button type="button" id="clearBtn">all clear</button>
+            </div>
+            <div class="_block">
+                <p>
+                    選択したファイル：<span id="selectedFilesCnt">0</span>個
+                </p>
+                <div id="selectedFilesView"></div>
+            </div>
+
+            <h2>2. 出力ファイルの設定</h2>
+            <div class="_block">
+                <p>
+                    何も入力されない場合，出力ファイル名は現在日時になります
+                </p>
+                <label for="outputFileName">出力ファイル名</label>
+                <input type="text" name="outputFileName" id="outputFileName" maxlength="30" required>
+            </div>
+
+            <h2>3. 結合処理を実行</h2>
+            <div class="_block">
+                <p>
+                    下のmergeボタンを押すと結合処理が実行され，生成したファイルがダウンロード出来ます
+                </p>
+            </div>
+            <div class="_block">
+                <button type="button" id="mergeBtn">merge</button>
+            </div>
+        </main>
+
+        <footer>
+            <a href="https://yuto02d2-e2.github.io/">Yuto02D2</a> &copy; 2022 All rights reserved.
+        </footer>
+
+        <script src="./script.js"></script>
+    </body>
+
+</html>
