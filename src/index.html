@@ -6,16 +6,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./style.css">
+        <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+        <script type="module" src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.js"></script>
+        <script src="./library/download.js"></script>
         <title>PDF tools</title>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-0W9FZ3QRLK"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-            gtag('config', 'G-0W9FZ3QRLK');
-        </script> -->
+        <!-- TODO: google analyticsにこのサイトを登録して，gtagをここに埋め込む -->
+        <!-- TODO: 余裕があれば，site mapというのも設定してみる -->
     </head>
 
     <body>
@@ -28,34 +26,36 @@
         </header>
 
         <main>
-            <div class="pdfInput">
-                <p class="_block">
-                    結合したいPDFファイル(*.pdf)を選択してください<br>
-                    ※PCの場合，ctrl+クリックで一気に追加出来ます
-                </p>
-                <div class="_block">
-                    <input type="file" name="inputPdf" id="inputPdf" accept=".pdf" multiple="multiple">
-                    <button type="button" id="addBtn">add</button>
-                </div>
-                <div class="_block">
-                    <span>選択したファイル</span>
-                    <button type="button" id="clearBtn">all clear</button>
-                    <div id="selectedFilesView"></div>
-                </div>
-                <div class="_block">
-                    <label for="outputFileName">出力ファイル名</label>
-                    <input type="text" name="outputFileName" id="outputFileName" maxlength="30" required>
-                </div>
-                <div class="_block">
-                    <button type="button" id="mergeBtn">merge</button>
-                </div>
+            <h2>1. 入力ファイルの選択</h2>
+            <p class="_block">
+                結合したいPDFファイル(*.pdf)を選択してください<br>
+                ※PCの場合，ctrl+クリックやshift+クリックで複数選択すれば一気に追加できます
+            </p>
+            <div class="_block">
+                <input type="file" name="inputTAG" id="inputTAG" accept=".pdf" multiple="multiple">
+                <button type="button" id="addBtn">add</button>
+            </div>
+            <div class="_block">
+                <span>選択したファイル</span>
+                <button type="button" id="clearBtn">all clear</button>
+                <div id="selectedFilesView"></div>
             </div>
 
-            <div class="pdfOutput">
-                <p class="_block">
-                    生成されたファイルをダウンロードしてください
+            <h2>2. 出力ファイルの設定</h2>
+            <div class="_block">
+                <p>
+                    何も入力されない場合，出力ファイル名は現在日時になります
                 </p>
-                <div id="output">download</div>
+                <label for="outputFileName">出力ファイル名</label>
+                <input type="text" name="outputFileName" id="outputFileName" maxlength="30" required>
+            </div>
+
+            <h2>3. 結合処理を実行</h2>
+            <div class="_block">
+                <p>
+                    下のmergeボタンを押すと結合処理が実行され，生成したファイルがダウンロード出来ます
+                </p>
+                <button type="button" id="mergeBtn">merge</button>
             </div>
         </main>
 

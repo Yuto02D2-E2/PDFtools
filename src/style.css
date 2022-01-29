@@ -58,18 +58,9 @@ main {
     flex-wrap: wrap;
     margin: 20px auto;
     width: 75%;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
 }
 main ._block {
     margin: 20px 0px;
-}
-main .pdfInput {
-    border-bottom: solid 3px black;
-    padding-bottom: 20px;
-}
-main .pdfOutput {
-    padding-top: 20px;
 }
 
 
