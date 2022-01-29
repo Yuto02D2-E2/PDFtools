@@ -33,6 +33,7 @@ See it if you are interested.
 ## # Version and License of the library used
 - pdf-lib.js@1.17.1 : [MIT license](https://github.com/Hopding/pdf-lib/blob/master/LICENSE.md)
 - download.js@1.4.7 : [MIT license](https://github.com/rndme/download/blob/master/LICENSE.md)
+- fontkit.js@1.8.1 : [MIT license](https://github.com/foliojs/fontkit)
 
 <br>
 

@@ -5,11 +5,15 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- load css file -->
         <link rel="stylesheet" href="./style.css">
-        <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+        <!-- load javascript library -->
         <script type="module" src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.js"></script>
+        <script src="https://unpkg.com/@pdf-lib/fontkit@1.1.1/dist/fontkit.umd.js"></script>
         <script src="./library/download.js"></script>
+
         <title>PDF tools</title>
+        <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <!-- TODO: google analyticsにこのサイトを登録して，gtagをここに埋め込む -->
@@ -17,6 +21,7 @@
     </head>
 
     <body>
+        <!-- TODO: helpページを作る？ -->
         <header>
             <a href="#" id="logo">
                 <img src="./images/logo.png" alt="logo">
@@ -26,6 +31,9 @@
         </header>
 
         <main>
+            <!-- TODO: mainのレイアウトをもう少しちゃんとしたい -->
+            <div id="errWindow" style="color: red;" class="_block"></div>
+
             <h2>1. 入力ファイルの選択</h2>
             <p class="_block">
                 結合したいPDFファイル(*.pdf)を選択してください<br>
@@ -34,10 +42,12 @@
             <div class="_block">
                 <input type="file" name="inputTAG" id="inputTAG" accept=".pdf" multiple="multiple">
                 <button type="button" id="addBtn">add</button>
+                <button type="button" id="clearBtn">all clear</button>
             </div>
             <div class="_block">
-                <span>選択したファイル</span>
-                <button type="button" id="clearBtn">all clear</button>
+                <p>
+                    選択したファイル：<span id="selectedFilesCnt">0</span>個
+                </p>
                 <div id="selectedFilesView"></div>
             </div>
 
@@ -55,12 +65,14 @@
                 <p>
                     下のmergeボタンを押すと結合処理が実行され，生成したファイルがダウンロード出来ます
                 </p>
+            </div>
+            <div class="_block">
                 <button type="button" id="mergeBtn">merge</button>
             </div>
         </main>
 
         <footer>
-            Yuto02D2 &copy; 2022 All rights reserved.
+            <a href="https://yuto02d2-e2.github.io/">Yuto02D2</a> &copy; 2022 All rights reserved.
         </footer>
 
         <script src="./script.js"></script>

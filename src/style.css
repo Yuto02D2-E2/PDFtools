@@ -53,11 +53,23 @@ header #title {
 }
 
 
+/* TODO: 後でもう少しちゃんと見た目を整える */
 main {
     flex: 1;
     flex-wrap: wrap;
     margin: 20px auto;
     width: 75%;
+    text-align: left;
+    align-items: center;
+}
+main button {
+    border: solid lightblue 1px;
+    border-radius: 30px;
+    padding: 5px 10px;
+    box-shadow: lightblue 5px 5px 5px;
+}
+main button:hover {
+    box-shadow: none;
 }
 main ._block {
     margin: 20px 0px;
